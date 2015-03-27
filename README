@@ -1,0 +1,43 @@
+Hello World C-project
+=====================
+
+This is just a "helloworld" example project.
+
+The only purpose of this project is to use as scaffolding
+C language project.
+
+The project uses CMakes to build the executable.
+
+
+Build and execute
+-----------------
+
+1. Generate the Makefile:
+
+    $ cmake .
+
+2. Make the project and generate the executable "helloworld".
+
+    $ make
+
+3. Then execute with:
+
+    $ ./helloworld
+
+To clean the compiled binary and compiled modules:
+
+    $ make clean
+
+To clean all compiled files and generated Makefiles:
+
+    $ make clean-all
+
+
+About
+-----
+
+Source: https://github.com/mrsarm/helloworld
+
+Authors: (2015) Mariano Ruiz <mrsarm@gmail.cm>
+
+License: GPL-3
