@@ -3,7 +3,7 @@ Hello World C-project
 
 This is just a "helloworld" example project.
 
-The only purpose of this project is to use as scaffolding
+The only purpose of this project is to use as a scaffolding
 C language project.
 
 The project uses CMakes to build the executable.
