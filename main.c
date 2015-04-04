@@ -1,4 +1,4 @@
-/* main.cpp
+/* main.c
 
    Copyright (C) 2015 Mariano Ruiz <mrsarm@gmail.com>
    This file is part of the helloworld C-project.
