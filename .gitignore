@@ -22,6 +22,7 @@
 
 # Executables
 helloworld
+test_say_hello
 *.exe
 *.out
 *.app
