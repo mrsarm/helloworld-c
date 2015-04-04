@@ -6,7 +6,8 @@ This is just a "helloworld" example project.
 The only purpose of this project is to use as a scaffolding
 C language project.
 
-The project uses CMakes to build the executable.
+The project uses *CMakes* to build the executable, and *CHEAT* for
+unit testing.
 
 
 Build and execute
@@ -31,6 +32,17 @@ To clean the compiled binary and compiled modules:
 To clean all compiled files and generated Makefiles:
 
     $ make clean-all
+
+
+Tests
+-----
+
+Tests are built with CHEAT <http://users.jyu.fi/~sapekiis/cheat/index.html>,
+an unit testing framework for C/C++ programming language.
+
+To run the tests, first build the project and then execute:
+
+    $ ./test_say_hello
 
 
 About
