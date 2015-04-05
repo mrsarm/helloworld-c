@@ -13,23 +13,23 @@ unit testing.
 Build and execute
 -----------------
 
-1. Generate the Makefile:
+1. From the source directory, generate the "Makefile":
 
     $ cmake .
 
-2. Make the project and generate the executable "helloworld".
+2. *Make* the project and generate the executable "helloworld".
 
     $ make
 
 3. Then execute with:
 
-    $ ./helloworld
+    $ bin/helloworld
 
-To clean the compiled binary and compiled modules:
+To clean the compiled binaries and compiled modules:
 
     $ make clean
 
-To clean all compiled files and generated Makefiles:
+To clean all compiled files and generated "Makefiles":
 
     $ make clean-all
 
@@ -42,7 +42,7 @@ an unit testing framework for C/C++ programming language.
 
 To run the tests, first build the project and then execute:
 
-    $ ./test_say_hello
+    $ bin/test_say_hello
 
 
 About
