@@ -21,8 +21,7 @@
 *.dylib
 
 # Executables
-helloworld
-test_say_hello
+bin/
 *.exe
 *.out
 *.app
@@ -37,7 +36,7 @@ test_say_hello
 .project
 .cproject
 .settings
-Debug
+Debug/
 
 # IDEA files
 .idea
