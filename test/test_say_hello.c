@@ -20,7 +20,7 @@
 
 #include "cheat.h"
 #include "cheats.h"
-#include "../say_hello.h"
+#include "say_hello.h"
 
 CHEAT_TEST(greeting_works,
        cheat_assert_string("Hello Mariano", say_hello("Mariano"));

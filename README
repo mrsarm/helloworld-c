@@ -23,7 +23,7 @@ Build and execute
 
 3. Then execute with:
 
-    $ bin/helloworld
+    $ out/helloworld
 
 To clean the compiled binaries and compiled modules:
 
@@ -42,7 +42,7 @@ an unit testing framework for C/C++ programming language.
 
 To run the tests, first build the project and then execute:
 
-    $ bin/test_say_hello
+    $ out/test_say_hello
 
 
 About
