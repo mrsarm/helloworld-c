@@ -23,5 +23,11 @@
 #include "say_hello.h"
 
 CHEAT_TEST(greeting_works,
-       cheat_assert_string("Hello Mariano", say_hello("Mariano"));
+        cheat_assert_string("Hello Mariano", say_hello("Mariano"));
+)
+
+CHEAT_TEST(greeting_with_big_names_works,
+        /* Full name Pablo Picasso */
+        cheat_assert_string("Hello Pablo Diego José Francisco de Paula Juan Nepomuceno Cipriano de la Santísima Trinidad Ruiz Picasso",
+                            say_hello("Pablo Diego José Francisco de Paula Juan Nepomuceno Cipriano de la Santísima Trinidad Ruiz Picasso"));
 )
