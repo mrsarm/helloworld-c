@@ -25,6 +25,17 @@ Build and execute
 
     $ out/helloworld
 
+4. To install the executable `helloworld`
+   into `/usr/local/bin`:
+
+       $ sudo make install
+
+   To install into another folder, execute the step 1
+   overwriting the `CMAKE_INSTALL_PREFIX` variable, eg.
+   to install into `/usr/bin` folder:
+
+       $ cmake -DCMAKE_INSTALL_PREFIX=/usr .
+
 To clean the compiled binaries and compiled modules:
 
     $ make clean
@@ -50,6 +61,6 @@ About
 
 Source: https://github.com/mrsarm/helloworld
 
-Authors: (2015) Mariano Ruiz <mrsarm@gmail.cm>
+Authors: (2015-2018) Mariano Ruiz <mrsarm@gmail.cm>
 
-License: GPL-3
+License: LGPL-3
