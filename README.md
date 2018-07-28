@@ -1,7 +1,7 @@
 Hello World C-project
 =====================
 
-This is just a "helloworld" example project.
+This is just a **"helloworld"** example project.
 
 The only purpose of this project is to use as a scaffolding
 C language project.
@@ -15,15 +15,15 @@ Build and execute
 
 1. From the source directory, generate the "Makefile":
 
-    $ cmake .
+       $ cmake .
 
 2. *Make* the project and generate the executable "helloworld".
 
-    $ make
+       $ make
 
 3. Then execute with:
 
-    $ out/helloworld
+       $ out/helloworld
 
 4. To install the executable `helloworld`
    into `/usr/local/bin`:
