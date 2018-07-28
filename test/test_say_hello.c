@@ -18,6 +18,8 @@
    <http://www.gnu.org/licenses/>.  */
 
 
+#define CHEAT_NO_MATH
+
 #include "cheat.h"
 #include "cheats.h"
 #include "say_hello.h"

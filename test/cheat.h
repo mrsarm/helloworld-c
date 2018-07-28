@@ -1,9 +1,9 @@
 /*
-Copyright (c) 2012, Guillermo "Tordek" Freschi
-Copyright (c) 2013, Sampsa "Tuplanolla" Kiiskinen
-All rights reserved.
+Copyright (c) 2012 Guillermo "Tordek" Freschi
+Copyright (c) 2013 Sampsa "Tuplanolla" Kiiskinen
 
-The full license can be found in the LICENSE file.
+This is free software, and you are welcome to redistribute it
+under certain conditions; see the LICENSE file for details.
 */
 
 /*
@@ -442,7 +442,7 @@ __attribute__ ((__const__, __warn_unused_result__))
 static size_t cheat_mean(size_t const size,
 		size_t const another_size) {
 	if (another_size < size)
-		return cheat_mean(another_size, size);
+		return another_size + (size - another_size) / 2;
 
 	return size + (another_size - size) / 2;
 }
@@ -1231,7 +1231,7 @@ terminates the program in case of a failure.
 */
 __attribute__ ((__io__))
 static void cheat_print_version(void) {
-	(void )fputs("CHEAT 1.0.2", stdout); /* This is always boring. */
+	(void )fputs("CHEAT 1.0.4", stdout); /* This is always boring. */
 	(void )fputc('\n', stdout);
 }
 
@@ -1721,9 +1721,20 @@ static void cheat_isolate_test(struct cheat_suite* const suite,
 
 		cheat_run_coupled_test(suite, test);
 
-		fflush(suite->message_stream); /* This is very important, because
-				streams opened from file descriptors are not flushed when
-				the file descriptors are closed. */
+		/*
+		These are very important, because
+		streams opened from file descriptors are not flushed when
+		the file descriptors are closed.
+		*/
+
+		if (fflush(suite->message_stream) == EOF)
+			cheat_death("failed to flush the message stream", errno);
+
+		if (fflush(stdout) == EOF)
+			cheat_death("failed to flush the standard output stream", errno);
+
+		if (fflush(stderr) == EOF)
+			cheat_death("failed to flush the standard error stream", errno);
 
 		for (index = 0;
 				index < channel_count;

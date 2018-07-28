@@ -1,9 +1,9 @@
 /*
-Copyright (c) 2012, Guillermo "Tordek" Freschi
-Copyright (c) 2013, Sampsa "Tuplanolla" Kiiskinen
-All rights reserved.
+Copyright (c) 2012 Guillermo "Tordek" Freschi
+Copyright (c) 2013 Sampsa "Tuplanolla" Kiiskinen
 
-The full license can be found in the LICENSE file.
+This is free software, and you are welcome to redistribute it
+under certain conditions; see the LICENSE file for details.
 */
 
 #ifndef CHEAT_H
@@ -277,20 +277,20 @@ CHEAT_GENERATE_INTEGER(long_long_unsigned_int, long long unsigned int, "%llu")
 CHEAT_GENERATE_FLOATING(float, float, fabsf, "%hg")
 CHEAT_GENERATE_FLOATING(long_double, long double, fabsl, "%lg")
 
-#define cheat_assert_float(actual, expected) \
-	cheat_check_float(&cheat_suite, false, actual, expected, \
+#define cheat_assert_float(actual, expected, tolerance) \
+	cheat_check_float(&cheat_suite, false, tolerance, actual, expected, \
 		__FILE__, __LINE__)
 
-#define cheat_assert_not_float(actual, expected) \
-	cheat_check_float(&cheat_suite, true, actual, expected, \
+#define cheat_assert_not_float(actual, expected, tolerance) \
+	cheat_check_float(&cheat_suite, true, tolerance, actual, expected, \
 		__FILE__, __LINE__)
 
-#define cheat_assert_long_double(actual, expected) \
-	cheat_check_long_double(&cheat_suite, false, actual, expected, \
+#define cheat_assert_long_double(actual, expected, tolerance) \
+	cheat_check_long_double(&cheat_suite, false, tolerance, actual, expected, \
 		__FILE__, __LINE__)
 
-#define cheat_assert_not_long_double(actual, expected) \
-	cheat_check_long_double(&cheat_suite, true, actual, expected, \
+#define cheat_assert_not_long_double(actual, expected, tolerance) \
+	cheat_check_long_double(&cheat_suite, true, tolerance, actual, expected, \
 		__FILE__, __LINE__)
 
 #endif
