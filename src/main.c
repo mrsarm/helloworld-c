@@ -26,7 +26,7 @@
 
 int main() {
     char str[100];
-    printf("Your name: ");
+    printf("what is your name: ");
     char* hello = say_hello(fgets(str, 99, stdin));
     printf("> %s", hello);
     free(hello);
