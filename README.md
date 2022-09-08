@@ -35,13 +35,9 @@ Build and execute
    to install into `/usr/bin` folder:
 
        $ cmake -DCMAKE_INSTALL_PREFIX=/usr .
-
 To clean the compiled binaries and compiled modules:
-
     $ make clean
-
 To clean all compiled files and generated "Makefiles":
-
     $ make clean-all
 
 
