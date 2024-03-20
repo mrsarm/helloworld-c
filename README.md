@@ -59,6 +59,10 @@ All of them can be executed with CMake CTest:
 
     $ make test
 
+Or just:
+
+    $ ctest
+
 To run the tests and see all the output in the console (specially
 if the tests fail), first build the project (`make`), and then execute:
 

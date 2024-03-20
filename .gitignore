@@ -47,6 +47,7 @@ cmake-build-debug/
 
 # CMake files
 CMakeCache.txt
-cmake_install.cmake
+*.cmake
 Makefile
 CMakeFiles
+Testing/
