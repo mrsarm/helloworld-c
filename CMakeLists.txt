@@ -48,7 +48,7 @@ add_test(test_coo ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/test_say_hello)
 
 add_custom_target(clean-all
   make clean && rm -fR ${CMAKE_BINARY_DIR}/CMakeCache.txt
-                       ${CMAKE_BINARY_DIR}/cmake_install.cmake
+                       ${CMAKE_BINARY_DIR}/*.cmake
                        ${CMAKE_BINARY_DIR}/Makefile
                        ${CMAKE_BINARY_DIR}/CMakeFiles
                        ${CMAKE_BINARY_DIR}/cmake-build-debug
