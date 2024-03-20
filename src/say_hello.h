@@ -1,6 +1,6 @@
 /* say_hello.h
 
-   Copyright (C) 2015-2018 Mariano Ruiz <mrsarm@gmail.com>
+   Copyright (C) 2015-2022 Mariano Ruiz <mrsarm@gmail.com>
    This file is part of the helloworld C-project.
 
    The "helloworld C-project" is free software; you can redistribute it and/or
@@ -21,6 +21,12 @@
 #ifndef _HELLOWORLD_SAY_HELLO_H_
 #define _HELLOWORLD_SAY_HELLO_H_
 
-char* say_hello(char *);
+/**
+ * Return a greeting message "Hello <name>" if name is not empty or null,
+ * otherwise just "Hello".
+ * @param name string with the name
+ * @return a string with the greeting message
+ */
+char* say_hello(const char *);
 
 #endif //_HELLOWORLD_SAY_HELLO_H_

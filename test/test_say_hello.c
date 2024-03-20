@@ -1,6 +1,6 @@
 /* test_say_hello.c
 
-   Copyright (C) 2015-2018 Mariano Ruiz <mrsarm@gmail.com>
+   Copyright (C) 2015-2022 Mariano Ruiz <mrsarm@gmail.com>
    This file is part of the helloworld C-project.
 
    The "helloworld C-project" is free software; you can redistribute it and/or
@@ -20,8 +20,8 @@
 
 #define CHEAT_NO_MATH
 
-#include "cheat.h"
-#include "cheats.h"
+#include <cheat.h>
+#include <cheats.h>
 #include "say_hello.h"
 
 CHEAT_TEST(greeting_works,
@@ -32,4 +32,16 @@ CHEAT_TEST(greeting_with_big_names_works,
         /* Full name Pablo Picasso */
         cheat_assert_string("Hello Pablo Diego José Francisco de Paula Juan Nepomuceno Cipriano de la Santísima Trinidad Ruiz Picasso",
                             say_hello("Pablo Diego José Francisco de Paula Juan Nepomuceno Cipriano de la Santísima Trinidad Ruiz Picasso"));
+)
+
+CHEAT_TEST(greeting_with_no_name_works,
+        /* Without name does work */
+        cheat_assert_string("Hello",
+                            say_hello(""));
+)
+
+CHEAT_TEST(greeting_with_null_name_works,
+        /* With null name does work */
+        cheat_assert_string("Hello",
+                            say_hello(NULL));
 )

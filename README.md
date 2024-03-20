@@ -7,7 +7,11 @@ The only purpose of this project is to use as a scaffolding
 C language project.
 
 The project uses *CMakes* to build the executable, and *CHEAT* for
-unit testing.
+unit testing, that is downloaded from a remote repository the first
+time the project tests are built.
+It also has a [workflow](.github/workflows/cmake.yml) configured to
+build and run the tests on GitHub Actions automatically on each
+push of code.
 
 
 Build and execute
@@ -48,10 +52,15 @@ To clean all compiled files and generated "Makefiles":
 Tests
 -----
 
-Tests are built with CHEAT <http://users.jyu.fi/~sapekiis/cheat/index.html>,
-an unit testing framework for C/C++ programming language.
+Tests are built with [CHEAT](https://github.com/Tuplanolla/cheat),
+a unit testing framework for C/C++.
 
-To run the tests, first build the project and then execute:
+All of them can be executed with CMake CTest:
+
+    $ make test
+
+To run the tests and see all the output in the console (specially
+if the tests fail), first build the project (`make`), and then execute:
 
     $ out/test_say_hello
 
@@ -61,6 +70,6 @@ About
 
 Source: https://github.com/mrsarm/helloworld
 
-Authors: (2015-2018) Mariano Ruiz <mrsarm@gmail.cm>
+Authors: (2015-2024) Mariano Ruiz <mrsarm@gmail.cm>
 
 License: LGPL-3

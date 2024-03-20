@@ -1,6 +1,6 @@
 /* say_hello.c
 
-   Copyright (C) 2015-2018 Mariano Ruiz <mrsarm@gmail.com>
+   Copyright (C) 2015-2024 Mariano Ruiz <mrsarm@gmail.com>
    This file is part of the helloworld C-project.
 
    The "helloworld C-project" is free software; you can redistribute it and/or
@@ -23,10 +23,21 @@
 #include <stdlib.h>
 #include "say_hello.h"
 
-char *say_hello(char *name) {
-    char* hello_pre = "Hello ";
-    char* hello = (char*) malloc(strlen(hello_pre) + strlen(name) + 1);
-    strcpy(hello, hello_pre);
-    strcat(hello, name);
-    return hello;
+const char * HELLO = "Hello";
+
+/**
+ * Return a greeting message "Hello <name>" if name is not empty or null,
+ * otherwise just "Hello".
+ * @param name string with the name
+ * @return a string with the greeting message
+ */
+char *say_hello(const char *name) {
+    if (name != NULL && strlen(name) > 0) {
+        char *hello = (char *) malloc(strlen(HELLO) + strlen(name) + 1);
+        strcpy(hello, HELLO);
+        strcat(hello, " ");
+        strcat(hello, name);
+        return hello;
+    }
+    return strcpy((char *) malloc(strlen(HELLO) + 1), HELLO);
 }
