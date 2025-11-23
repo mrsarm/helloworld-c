@@ -4,7 +4,7 @@ project(helloworld C)
 include(FetchContent)
 enable_testing()
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 17)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/out")
@@ -47,7 +47,9 @@ file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/BuildTestTarget.cmake"
 add_test(test_coo ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/test_say_hello)
 
 add_custom_target(clean-all
-  make clean && rm -fR ${CMAKE_BINARY_DIR}/CMakeCache.txt
+  make clean
+    && ${CMAKE_COMMAND} -E rm -rf
+                       ${CMAKE_BINARY_DIR}/CMakeCache.txt
                        ${CMAKE_BINARY_DIR}/*.cmake
                        ${CMAKE_BINARY_DIR}/Makefile
                        ${CMAKE_BINARY_DIR}/CMakeFiles
@@ -56,5 +58,5 @@ add_custom_target(clean-all
                        ${CMAKE_BINARY_DIR}/install_manifest.txt
                        ${CMAKE_BINARY_DIR}/Testing
                        ${CMAKE_BINARY_DIR}/_deps
-             && rmdir  ${CMAKE_BINARY_DIR}/out
+                       ${CMAKE_BINARY_DIR}/out
 )
